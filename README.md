@@ -25,9 +25,20 @@ The package then be automatically fetched from git. The package will automatical
 The `module.js` file can then be found in the `node_modules/flynn-module-es5` directory as `module.js`. Include the file
 manually into your build process **before** anything else, to ensure that modules can be created afterwards.
 
-There are no dependencies for this project, due to it's minimalist nature.
+The filepath of the `module.js` is passed to the `index.js` when the package is `required` in the build script.
 
+Example gulp build:
+```javascript
+var gulp = require('gulp');
+var flynnModule = require('flynn-module-es5'); // returns the fullpath of the `module.js` file.
+  
+gulp.task('copy:module-polyfill', () =>{
+  return gulp.src(flynnModule)
+    .pipe(gulp.dest('./build/assets'));
+})
+```
 
+There are no dependencies for this package, due to it's minimalist nature.
 
 ## Usage
 
