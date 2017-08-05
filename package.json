@@ -2,7 +2,7 @@
   "name": "flynn-module-es5",
   "version": "1.0.0",
   "description": "A primitive module polyfill for ES5 allowing shared methods and namespace preservation",
-  "main": "module.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
