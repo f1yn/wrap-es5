@@ -90,23 +90,27 @@ set to the value of `window.$F`, but can be manually changed to meet your specif
 The global object is also passed as the first parameter of any `$F.createModule` or `window.__createModule` calls, allowing
 appropriate reference within the scope of the module itself.
 
+***
 ### `$F.createModule`  (`window.__createModule`)
 #### params: `( nameOfModule {string}, closure {function} )`
 See **Usage** above, as it's usage is explained.
 
+***
 ### `$F.require( nameOfModule {string} )`
 Also explained in **Usage** above. Will result in `console.error` message if the module does not exists, and a
 `console.warn` if the called module exists, but does not have any export value.
 
+***
 ### `$F.window`
 A reference to the `Window` object on the client.
 
+***
 ### `$F.document`
 A reference to the `document` object on the client.
 
+***
 ### `$F.bodyClass`
 A reference to the `document.body.classList` method object on the client.
-
 
 
 
@@ -117,6 +121,7 @@ available by accessing the module's root scope (`this` or preferably `self` when
 
 The available methods are as follow:
 
+***
 ### `this.log`, `this.warn`, `this.error`
 Useful logging functions that reference the name of the module from which it is called.
 
@@ -132,7 +137,7 @@ Takes multiple arguments, which are equivalent to that of their native equivalen
     // should output `[functional-module] hello`
 }));
 ```
-
+***
 ### `this.checkFirstFromQuery`
 #### params: `( NodeList {NodeList}, warningMessage [{string} optional], callback [{function} optional] )`
 This method (mostly used as a longhand version of `firstNodeOf`) allows for the checking whether the first Node of a
@@ -176,15 +181,18 @@ if none are found. There is no return value if a `callback` if present.
   }));
 ```
 
+***
 ### `this.firstNodeOf`
 #### params: `( NodeList {NodeList}, callback [{function} optional], warningMessage [{string} optional] )`
 A wrapper function for `this.checkFirstFromQuery`, with a different ordering of parameters. The warningMessage parameter
 is now the last parameter. 
 
+***
 ### `this.isScrolledIntoView( element {HTMLElement} )`
 Compared the current `getBoundingClientRect()` of an HTMLElement with the size of the window to determine if it is inside
 the client's viewport. Returns a `boolean` value.
 
+***
 ### `this.matchesAncestor`
 #### params: `( element {HTMLElement}, maxDepth {Number}, check {Function} )`
 Searches the `parentNode` of the `element` until a the `check` function returns a value of `true`.
