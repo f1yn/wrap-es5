@@ -1,4 +1,4 @@
-#Flynn-Module-ES5 (EcmaScript 5)
+# Flynn-Module-ES5 (EcmaScript 5)
 
 This is a polyfill wrapper that helps remove the issue of global namespace pollution, as well as introduce a couple of
 key features that I regularly use for my projects.
@@ -8,7 +8,7 @@ projects, as well as allow inheritance of common methods (that I use regularly) 
 
 
 
-##Installing
+## Installing
 
 To install, include this git repository as a dependency for your npm project and `npm install`.
 
@@ -29,7 +29,7 @@ There are no dependencies for this project, due to it's minimalist nature.
 
 
 
-##Usage
+## Usage
 
 The idea behind this code is to reduce global pollution by implementing a primitive module polyfill, which allows for
 isolation of specific code segments, while allowing the export of modules. When creating new modules, the following
@@ -122,7 +122,7 @@ Useful logging functions that reference the name of the module from which it is 
 
 Takes multiple arguments, which are equivalent to that of their native equivalents (`console.log`, `console.warn`, and `console.error`).
 
-####Example:
+#### Example:
 ```javascript
 (__createModule('functional-module', function($F){
     var self = this;
@@ -145,7 +145,7 @@ In my own way of coding, I often specify whether to run code if a specific insta
 If there is no callback function, it returns an `HTMLElement` reference matching the first Node of the query, or `null` 
 if none are found. There is no return value if a `callback` if present.
 
-####Example:
+#### Example:
 ```javascript
 (__createModule('functional-module', function($F){
     var self = this;
@@ -193,7 +193,7 @@ The `check` has two parameters that are given whenever a new iteration is trigge
 parentNode). The first parameter will be the current `parentNode` being compared, while the second is the element that
 is the original root element (optional).
 
-####Example:
+#### Example:
 ```javascript
 (__createModule('functional-module', function($F){
     var self = this;
