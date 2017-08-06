@@ -47,7 +47,7 @@
         }  else {
             this.warn(warningMessage || '');
             if (callback){
-                callback(null);
+                // callback(null);
             } else return null;
         }
     }
