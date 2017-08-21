@@ -75,7 +75,11 @@ this can be seen below:
 // is unknown.
 
 // MODULE #1
-(__createModule('data-module', function(){    
+(__createModule('data-module', function(){   
+    
+    this.protected = true; // is true by default. When false, the
+    // exported object can be manipulated by referencing modules
+    
     this.exports = ['hello', 'world']; // export the data
 }));
 

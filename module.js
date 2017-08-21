@@ -7,14 +7,33 @@
 
     // this is the constrictor used for creating new modules
     // name -> the name of the module ; code -> the code being applied within the module.
-    function ModuleClass (name, code){
+    function ModuleClass (name, code) {
         this.name = name;
         this.document = document;
         this.body = document.body;
         this.bodyClass = document.body.classList;
 
-        code.apply(this, [globalObject, window, document, bodyClass]);
+        try {
+            code.apply(this, [globalObject, window, document, bodyClass]); // apply prototype and execute inner code
+
+            // determine if the project has is not protected
+
+            if (typeof this.exports === "object") {
+                // the module has an object return, make sure it's protected (unless otherwise specified)
+
+                if ((typeof this.protected === "boolean") ? this.protected : true) {
+                    // if the object is protected (default)
+                    Object.freeze(this.exports);
+                } else {
+                    // warn the user
+                    console.warn('[' + name + ']', 'exported object is un-protected. This is not recommended.');
+                }
+            }
+        } catch (e) {
+            console.error('[' + name + ']', 'has encountered a fatal exception', e);
+        }
     }
+
 
     // routed console errors
 
@@ -98,13 +117,15 @@
         }
     }
 
-    function _require(moduleName){
+    function _require(moduleName, readOnly){
+        readOnly = (typeof readOnly === "boolean") ? readOnly : true; // default to a immutable reference
+
         if (typeof modules[moduleName] === "object"){
             // module exists, check if it has any exports
 
             if (typeof modules[moduleName].exports !== "undefined"){
                 // it has an export
-                return modules[moduleName].exports;
+                return modules[moduleName].exports; // return immutable reference
             } else {
                 console.warn('module "' + moduleName + '" has no exports');
             }
