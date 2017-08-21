@@ -149,7 +149,7 @@
         window.$F = globalObject;
     }
 
-    // export global reqquire method for imported scripts -> if it does not already exist
+    // export global require method for imported scripts -> if it does not already exist
     if (typeof window.__createModule === "undefined") {
         window.__createModule = createModule;
     }
