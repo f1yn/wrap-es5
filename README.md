@@ -177,7 +177,7 @@ if none are found. There is no return value if a `callback` if present.
         // This code will only execute if there is at least one Element'
         // With a ClassName of bob.
         
-        // Otherwise, `[functional-module] Bob class does not exist` will
+        // Otherwise, `[functional-module] Bob class does not exist`
         // will be output to the console.
     });
     
@@ -210,7 +210,7 @@ the client's viewport. Returns a `boolean` value.
 ***
 ### `this.matchesAncestor`
 #### params: `( element {HTMLElement}, maxDepth {Number}, check {Function} )`
-Searches the `parentNode` of the `element` until a the `check` function returns a the `HTMLElement` if a matching element is found; will return `null` if one does not exist. `maxDepth` is required, as it prevents the search from propagating too far up the DOM tree.
+Searches the `parentNode` of the `element` until the `check` function returns the `HTMLElement` if a matching element is found; It will return `null` if one does not exist. `maxDepth` is required, as it prevents the search from propagating too far up the DOM tree.
 
 The `check` has two parameters that are given whenever a new iteration is triggered (when the loop goes to the next
 parentNode). The first parameter will be the current `parentNode` being compared, while the second is the element that
