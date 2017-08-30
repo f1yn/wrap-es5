@@ -1,4 +1,5 @@
 # Flynn-Module-ES5 (EcmaScript 5)
+[![devDependencies Status](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://david-dm.org/flynnham/travis-testing?type=dev)
 
 This is a polyfill wrapper that helps remove the issue of global namespace pollution, as well as introduce a couple of
 key features that I regularly use for my projects.
