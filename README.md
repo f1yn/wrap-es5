@@ -1,4 +1,4 @@
-# Flynn-Module-ES5 (EcmaScript 5)
+Wrap-ES5 (EcmaScript 5)
 [![devDependencies Status](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://flynnbuckingham.com)
 
 This is a polyfill wrapper that helps remove the issue of global namespace pollution, as well as introduce a couple of
@@ -7,8 +7,6 @@ key features that I regularly use for my projects.
 I do this to help add the ability to increase the portability of my
 projects, as well as allow inheritance of common methods (that I use regularly) through prototype inheritance.
 
-
-
 ## Installing
 
 To install, include this git repository as a dependency for your npm project and `npm install`.
@@ -16,14 +14,14 @@ To install, include this git repository as a dependency for your npm project and
 ```json
 {
   "dependancies":{
-     "flynn-module-es5": "git://github.com/flynnham/flynn-module-es5.git"
+     "wrap-es5": "git://github.com/flynnham/wrap-es5.git"
   }
 }
 ```
 
 The package then be automatically fetched from git. The package will automatically update when using `npm update`.
 
-The `module.js` file can then be found in the `node_modules/flynn-module-es5` directory as `module.js`. Include the file
+The `module.js` file can then be found in the `node_modules/wrap-es5` directory as `module.js`. Include the file
 manually into your build process **before** anything else, to ensure that modules can be created afterwards.
 
 The filepath of the `module.js` is passed to the `index.js` when the package is `required` in the build script.
@@ -31,10 +29,10 @@ The filepath of the `module.js` is passed to the `index.js` when the package is 
 Example gulp build:
 ```javascript
 var gulp = require('gulp');
-var flynnModule = require('flynn-module-es5'); // returns the fullpath of the `module.js` file.
+var wrapModule = require('wrap-es5'); // returns the fullpath of the `module.js` file.
   
 gulp.task('copy:module-polyfill', () =>{
-  return gulp.src(flynnModule)
+  return gulp.src(wrapModule)
     .pipe(gulp.dest('./build/assets'));
 })
 ```
@@ -51,10 +49,8 @@ syntax is used:
 ($F.createModule('the-name-of-the-module', function(globalObject){
     var self = this; // pointer to the module root object
     
-    
     // code to be executed in the module, methods, ect
-    
-    
+   
     self.exports = {} || [] || 'string' || 'number' || null; 
     
     // At the end of the module, an export can be made allowing for
