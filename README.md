@@ -1,4 +1,4 @@
-Wrap-ES5 (EcmaScript 5)
+# Wrap-ES5 (EcmaScript 5)
 [![devDependencies Status](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://flynnbuckingham.com)
 
 This is a polyfill wrapper that helps remove the issue of global namespace pollution, as well as introduce a couple of
