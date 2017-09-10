@@ -1,8 +1,6 @@
-# 
-
 <div align="center">
   <a href="https://swlinux.org">
-    <img width=320" height="320" src="https://raw.githubusercontent.com/flynnham/wrap-es5/master/logo.svg" />
+    <img width=320" height="320" src="https://raw.githubusercontent.com/flynnham/wrap-es5/master/logo/logox512.png" />
   </a>
   <br>
   <h1>Wrap-ES5 (EcmaScript 5)</h1>
