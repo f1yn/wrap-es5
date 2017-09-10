@@ -1,5 +1,16 @@
-# Wrap-ES5 (EcmaScript 5)
-[![devDependencies Status](https://img.shields.io/badge/dependencies-none-brightgreen.svg)](https://flynnbuckingham.com)
+# 
+
+<div align="center">
+  <a href="https://swlinux.org">
+    <img width=320" height="320" src="https://raw.githubusercontent.com/flynnham/wrap-es5/master/logo.svg" />
+  </a>
+  <br>
+  <h1>Wrap-ES5 (EcmaScript 5)</h1>
+  <p> A primitive module polyfill for shared methods and namespace preservation.</p>
+  <a href="https://flynnbuckingham.com" title="dependencies status"><img src="https://img.shields.io/badge/dependencies-none-brightgreen.svg"/></a>
+</div>
+
+* * *
 
 This is a polyfill wrapper that helps remove the issue of global namespace pollution, as well as introduce a couple of
 key features that I regularly use for my projects.
@@ -29,10 +40,10 @@ The filepath of the `module.js` is passed to the `index.js` when the package is 
 Example gulp build:
 ```javascript
 var gulp = require('gulp');
-var wrapModule = require('wrap-es5'); // returns the fullpath of the `module.js` file.
+var wrapFile = require('wrap-es5'); // returns the fullpath of the `module.js` file.
   
 gulp.task('copy:module-polyfill', () =>{
-  return gulp.src(wrapModule)
+  return gulp.src(wrapFile)
     .pipe(gulp.dest('./build/assets'));
 })
 ```
