@@ -5,6 +5,9 @@
     var modules = {}; // container for modules
     var globalObject = {}; // container for global objec that is pushed to window/each module when declared
 
+    // allows freezing
+    var lockable = typeof Object.freeze !== "undefined";
+
     // this is the constrictor used for creating new modules
     // name -> the name of the module ; code -> the code being applied within the module.
     function ModuleClass (name, code) {
@@ -21,7 +24,7 @@
             if (typeof this.exports === "object") {
                 // the module has an object return, make sure it's protected (unless otherwise specified)
 
-                if ((typeof this.protected === "boolean") ? this.protected : true) {
+                if (((typeof this.protected === "boolean") ? this.protected : true) && lockable) {
                     // if the object is protected (default)
                     Object.freeze(this.exports);
                 } else {
@@ -135,18 +138,28 @@
         }
     }
 
+    // returns array of currently registered modules
+    function listModules() {
+        return Object.keys(modules)
+    }
+
     // setup global object methods
     globalObject = {
         createModule: createModule,
         require: _require,
+        listModules: listModules,
         window: Window,
         document: document,
-        bodyClass: bodyClass
+        bodyClass: bodyClass,
     }
 
     // export global object if it does not already exist
     if (typeof window.$F === "undefined") {
-        window.$F = globalObject;
+        if (lockable){
+            window.$F = Object.freeze(globalObject);
+        } else {
+            window.$F = globalObject
+        }
     }
 
     // export global require method for imported scripts -> if it does not already exist

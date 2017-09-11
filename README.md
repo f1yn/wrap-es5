@@ -5,7 +5,6 @@
   <br>
   <h1>Wrap-ES5 (EcmaScript 5)</h1>
   <p> A primitive module polyfill for shared methods and namespace preservation.</p>
-  <a href="https://flynnbuckingham.com" title="dependencies status"><img src="https://img.shields.io/badge/dependencies-none-brightgreen.svg"/></a>
 </div>
 
 * * *
@@ -46,7 +45,10 @@ gulp.task('copy:module-polyfill', () =>{
 })
 ```
 
-There are no dependencies for this package, due to it's minimalist nature.
+There are  dependencies for this package, due to it's minimalist nature.
+
+**Unit testing requires the manual installation of jest** This is not included by default to prevent a bloated install
+for a potentially un-needed dependency.
 
 ## Usage
 
