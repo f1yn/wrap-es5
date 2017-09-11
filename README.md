@@ -124,6 +124,10 @@ Also explained in **Usage** above. Will result in `console.error` message if the
 `console.warn` if the called module exists, but does not have any export value.
 
 ***
+### `$F.listModules()`
+Returns an `Array` of the currently registered module names. Will return an empty `Array` if non are present.
+
+***
 ### `$F.window`
 A reference to the `Window` object on the client.
 
