@@ -2,4 +2,7 @@ language: node_js
 node_js:
   - "lts/*"
 install:
-  - npm install -g jest
+  - npm install jest
+cache:
+  directories:
+    - node_modules
