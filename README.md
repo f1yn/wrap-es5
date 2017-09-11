@@ -5,6 +5,8 @@
   <br>
   <h1>Wrap-ES5 (EcmaScript 5)</h1>
   <p> A primitive module polyfill for shared methods and namespace preservation.</p>
+  <a href="https://travis-ci.org/flynnham/wrap-es5"><img src="https://travis-ci.org/flynnham/wrap-es5.svg?branch=master" alt="Build Status" /></a>
+  <a href="https://flynnbuckingham.com" title="dependencies status"><img src="https://img.shields.io/badge/dependencies-none-brightgreen.svg"/></a>
 </div>
 
 * * *
@@ -12,11 +14,10 @@
 This is a polyfill wrapper that helps remove the issue of global namespace pollution, as well as introduce a couple of
 key features that I regularly use for my projects.
 
-I do this to help add the ability to increase the portability of my
-projects, as well as allow inheritance of common methods (that I use regularly) through prototype inheritance.
+I do this to help add the ability to increase the portability of my projects, as well as allow inheritance of common methods
+(that I use regularly) through prototype inheritance.
 
 ## Installing
-
 To install, include this git repository as a dependency for your npm project and `npm install`.
 
 ```json
@@ -47,8 +48,7 @@ gulp.task('copy:module-polyfill', () =>{
 
 There are  dependencies for this package, due to it's minimalist nature.
 
-**Unit testing requires the manual installation of jest** This is not included by default to prevent a bloated install
-for a potentially un-needed dependency.
+**Unit testing requires the manual installation of jest** It's not included by default to prevent a bloated install.
 
 ## Usage
 
@@ -125,7 +125,7 @@ Also explained in **Usage** above. Will result in `console.error` message if the
 
 ***
 ### `$F.listModules()`
-Returns an `Array` of the currently registered module names. Will return an empty `Array` if non are present.
+Returns an `Array` of the currently registered module names as strings. Will return an empty `Array` if non are present.
 
 ***
 ### `$F.window`
